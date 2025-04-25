@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gestion Bibliothèque</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: #f4f6f9;
+      }
+      .navbar {
+        background-color: #343a40;
+      }
+      .navbar-brand {
+        font-weight: 600;
+        font-size: 1.5rem;
+      }
+      .nav-link {
+        color: white;
+        margin-right: 20px;
+        font-weight: 500;
+      }
+      .nav-link:hover {
+        color: #17a2b8;
+      }
+      .content {
+        margin-top: 30px;
+        padding: 40px;
+        background-color: white;
+        border-radius: 15px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+      h1,
+      h2 {
+        color: #343a40;
+      }
+      .btn-primary {
+        background-color: #17a2b8;
+        border: none;
+      }
+      .btn-primary:hover {
+        background-color: #138496;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <a class="navbar-brand" href="#">Bibliothèque</a>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#" onclick="showPage('home')">Accueil</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" onclick="showPage('books')"
+              >Gestion des Livres</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" onclick="showPage('students')"
+              >Gestion des Étudiants</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" onclick="showPage('login')"
+              >Connexion</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" onclick="showPage('register')"
+              >Inscription</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container mt-5">
+      <div id="home" class="content">
+        <h1>Bienvenue dans la gestion de la bibliothèque</h1>
+        <p>Interface moderne pour gérer les livres et les étudiants.</p>
+      </div>
+
+      <div id="books" class="content" style="display: none">
+        <h2>Gestion des Livres</h2>
+        <p>Ajoutez, modifiez et supprimez les livres.</p>
+      </div>
+
+      <div id="students" class="content" style="display: none">
+        <h2>Gestion des Étudiants</h2>
+        <p>Gérez les informations des étudiants.</p>
+      </div>
+
+      <div id="login" class="content" style="display: none">
+        <h2>Connexion</h2>
+        <form>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              placeholder="Entrez votre email"
+            />
+          </div>
+          <div class="form-group">
+            <label for="password">Mot de passe</label>
+            <input
+              type="password"
+              class="form-control"
+              id="password"
+              placeholder="Mot de passe"
+            />
+          </div>
+          <button type="submit" class="btn btn-primary">Connexion</button>
+        </form>
+      </div>
+
+      <div id="register" class="content" style="display: none">
+        <h2>Inscription</h2>
+        <form>
+          <div class="form-group">
+            <label for="name">Nom</label>
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              placeholder="Entrez votre nom"
+            />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              class="form-control"
+              id="registerEmail"
+              placeholder="Entrez votre email"
+            />
+          </div>
+          <div class="form-group">
+            <label for="password">Mot de passe</label>
+            <input
+              type="password"
+              class="form-control"
+              id="registerPassword"
+              placeholder="Mot de passe"
+            />
+          </div>
+          <div class="form-group">
+            <label for="userType">Type d'utilisateur</label><br />
+            <input type="radio" id="student" name="userType" value="student" checked />
+            <label for="student">Étudiant</label>
+            <input type="radio" id="admin" name="userType" value="admin" />
+            <label for="admin">Admin</label>
+          </div>
+          <button type="submit" class="btn btn-primary">S'inscrire</button>
+        </form>
+      </div>
+      
+
+    <script>
+      function showPage(pageId) {
+        const pages = document.querySelectorAll(".content");
+        pages.forEach((page) => (page.style.display = "none"));
+        document.getElementById(pageId).style.display = "block";
+      }
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>
